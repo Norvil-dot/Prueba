@@ -1,0 +1,55 @@
+/* ===== SIDEBAR DESKTOP ===== */
+.sidebar {
+    width: 280px;
+    background-color: #343a40;
+    color: white;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .nav-link {
+    color: #adb5bd;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    color: #fff;
+    background-color: #495057;
+}
+
+.sidebar .nav-link .fa {
+    margin-right: 10px;
+}
+
+/* ===== CONTENIDO ===== */
+.content-wrapper {
+    width: 100%;
+    min-width: 0;
+}
+
+/* =================================
+   RESPONSIVE (MÓVIL) - MENÚ LATERAL   
+   ================================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        transform: translateX(-100%); /* Oculto */
+        z-index: 1045;
+    }
+
+    .sidebar.show {
+        transform: translateX(0); /* Visible */
+    }
+
+    .content-wrapper {
+        margin-left: 0 !important;
+    }
+}
